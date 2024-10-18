@@ -70,6 +70,12 @@ describe('readFileAsynchronously', () => {
   jest.mock('path');
   jest.mock('fs/promises');
 
+  afterAll(() => {
+    jest.unmock('fs');
+    jest.unmock('path');
+    jest.unmock('fs/promises');
+  });
+
   test('should call join with pathToFile', async () => {
     const pathJoin = jest.spyOn(path, 'join');
     await readFileAsynchronously(pathToFile);
