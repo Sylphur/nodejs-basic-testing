@@ -57,7 +57,7 @@ describe('BankAccount', () => {
   });
 
   test('fetchBalance should return number in case if request did not failed', async () => {
-    jest.spyOn(lodash, 'random').mockReturnValue(70).mockReturnValueOnce(1);
+    jest.spyOn(lodash, 'random').mockReturnValueOnce(70).mockReturnValueOnce(1);
     expect(account.fetchBalance()).resolves.toEqual(expect.any(Number));
   });
 
